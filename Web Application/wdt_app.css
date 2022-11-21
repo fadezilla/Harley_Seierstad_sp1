@@ -1,0 +1,21 @@
+table, thead, tbody{
+    border: 1px solid;
+    border-color: #212529;
+    border-radius: 25px;
+    border-width: thin;
+}
+h2{
+    font-family: calibri;
+    color:#212529;
+    text-align: center;
+}
+thead{
+    font-family: consolas;
+    background-color: #0E8EA8;
+    color: #fff;
+}
+tbody{
+    font-family: calibri;
+    background-color: #83D1E1;
+    color: #212529;
+}
