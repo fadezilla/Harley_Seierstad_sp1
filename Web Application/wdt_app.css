@@ -1,8 +1,12 @@
-table, thead, tbody{
+td{
     border: 1px solid;
     border-color: #212529;
-    border-radius: 25px;
     border-width: thin;
+}
+table{
+    border-color: #212529;
+    border: 2px solid;
+    border-radius: 10px;
 }
 h2{
     font-family: calibri;
@@ -18,4 +22,21 @@ tbody{
     font-family: calibri;
     background-color: #83D1E1;
     color: #212529;
+}
+.well {
+    background: none;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: #CFF5FF;
+}
+
+tr td a{
+    color: red;
+}
+tr td.active a 
+{
+    background-color: blueviolet;
+    color: pink;
 }
