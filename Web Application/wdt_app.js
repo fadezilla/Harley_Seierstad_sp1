@@ -152,12 +152,14 @@ function timeConvert(min) {
    }
    if($('#tableBody > tr:nth-child(5)').hasClass('active') === true){
     if(duration.match(regex)) {
-        $("#tableBody > tr:nth-child(5) > td:nth-child(5)").append(status);
+        $("#tableBody > tr:nth-child(5) > td:nth-child(5)").empty().append(status);
         $("#tableBody > tr:nth-child(5) > td:nth-child(6)").append(outTime);
         $("#tableBody > tr:nth-child(5) > td:nth-child(7)").append(durationConverted);
         $("#tableBody > tr:nth-child(5) > td:nth-child(8)").append(expectedReturnTime);
         duration5 = duration
-        } 
+        } else {
+            alert("invalid input, try again")
+        }
    }
    
 }
@@ -200,8 +202,7 @@ function staffIn(){
 
 
 var currentDate = new Date();
-const myInterval = setInterval(staffMemberIsLate, 1000);
-
+var late = "late"
 function myStopFunction() {
     clearInterval(myInterval);
   }
@@ -210,35 +211,79 @@ rowTwoDuration = $("#tableBody > tr:nth-child(2) > td:nth-child(7)").text()
 rowThreeDuration = $("#tableBody > tr:nth-child(3) > td:nth-child(7)").text()
 rowFourDuration = $("#tableBody > tr:nth-child(4) > td:nth-child(7)").text()
 rowFiveDuration = $("#tableBody > tr:nth-child(5) > td:nth-child(7)").text()
-function staffMemberIsLate() {
-    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration1 * 60 * 1000))){
-        console.log("nr 1, person is out!")
+
+function alert1() {
+    $("#tableBody > tr:nth-child(1) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 1, you are late")
+    
+    
+}
+function alert2() {
+    $("#tableBody > tr:nth-child(2) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 2, you are late")
+}
+function alert3() {
+    $("#tableBody > tr:nth-child(3) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 3, you are late")
+    
+}
+function alert4() {
+    $("#tableBody > tr:nth-child(4) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 4, you are late")
+    
+}
+function alert5() {
+    $("#tableBody > tr:nth-child(5) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 5, you are late")
+    
+}
+timeNow = new Date()
+
+
+
+//idk pröv å lag en egen function for kvär row istede??
+
+function staffMemberIsLate2() {
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() === "Out") {
+        
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() === "Out") {
+        
     }
-    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration2 * 60 * 1000))){
-        console.log("nr 2, person is out!")
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() === "Out") {
+        
     }
-    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration3 * 60 * 1000))){
-        console.log("nr 3, person is out!")
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() ==="Out") {
+        
     }
-    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration4 * 60 * 1000))){
-        console.log("nr 4, person is out!")
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() === "Out") {
+    } 
+    } 
+} 
+
+function test(){
+    try {
+        if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration1 * 60 * 1000))){
+            console.log("person 1 is late")
+            $("#tableBody > tr:nth-child(1) > td:nth-child(5)").empty().append(late)
+        }if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration2 * 60 * 1000))){
+            console.log("person 2 is late")
+            $("#tableBody > tr:nth-child(2) > td:nth-child(5)").empty().append(late)
+        }if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration3 * 60 * 1000))){
+            console.log("person 3 is late")
+            $("#tableBody > tr:nth-child(3) > td:nth-child(5)").empty().append(late)
+        }if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration4 * 60 * 1000))){
+            console.log("person 4 is late")
+            $("#tableBody > tr:nth-child(4) > td:nth-child(5)").empty().append(late)
+        }if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration5 * 60 * 1000))){
+            console.log("person 5 is late")
+            $("#tableBody > tr:nth-child(5) > td:nth-child(5)").empty().append(late)
+        }
     }
-    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration5 * 60 * 1000))){
-        console.log("nr 5, person is out!")
-    }
-    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration1 * 60 * 1000))){
-        console.log("nr 1, person is late!")
-    }
-    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration2 * 60 * 1000))){
-        console.log("nr 2, person is late!")
-    }
-    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration3 * 60 * 1000))){
-        console.log("nr 3, person is late!")
-    }
-    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration4 * 60 * 1000))){
-        console.log("nr 4, person is late!")
-    }
-    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration5 * 60 * 1000))){
-        console.log("nr 5, person is late!")
+    catch(err){
+        console.log("wierd error")
     }
 }
+setInterval(test, 5000)
+
+
+

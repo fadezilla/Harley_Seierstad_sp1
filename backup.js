@@ -321,3 +321,272 @@ function GetRandomProfiles()
             } ); 
     }
     GetRandomProfiles()
+
+
+
+
+    var currentDate = new Date();
+const myInterval = setInterval(staffMemberIsLate, 1000);
+
+function myStopFunction() {
+    clearInterval(myInterval);
+  }
+rowOneDuration = $("#tableBody > tr:nth-child(1) > td:nth-child(7)").text()
+rowTwoDuration = $("#tableBody > tr:nth-child(2) > td:nth-child(7)").text()
+rowThreeDuration = $("#tableBody > tr:nth-child(3) > td:nth-child(7)").text()
+rowFourDuration = $("#tableBody > tr:nth-child(4) > td:nth-child(7)").text()
+rowFiveDuration = $("#tableBody > tr:nth-child(5) > td:nth-child(7)").text()
+function staffMemberIsLate() {
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration1 * 60 * 1000))){
+        console.log("nr 1, person is out!")
+    }
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration2 * 60 * 1000))){
+        console.log("nr 2, person is out!")
+    }
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration3 * 60 * 1000))){
+        console.log("nr 3, person is out!")
+    }
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration4 * 60 * 1000))){
+        console.log("nr 4, person is out!")
+    }
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration5 * 60 * 1000))){
+        console.log("nr 5, person is out!")
+    }
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration1 * 60 * 1000))){
+        console.log("nr 1, person is late!")
+        return;
+    }
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration2 * 60 * 1000))){
+        console.log("nr 2, person is late!")
+        return;
+    }
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration3 * 60 * 1000))){
+        console.log("nr 3, person is late!")
+        return;
+    }
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration4 * 60 * 1000))){
+        console.log("nr 4, person is late!")
+        return;
+    }
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration5 * 60 * 1000))){
+        alert("nr 5, person is late!")
+        return;
+    }
+}
+
+function staffMemberIsLate2(){
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() === "Out"){
+        var staff1OutTime = duration * 60000
+        myTimeOut = setTimeout(alertFunc1, staff1OutTime)
+        setTimeout(($("#tableBody > tr:nth-child(1) > td:nth-child(5)").empty().append(late)), staff1OutTime)
+    } else {
+        clearTimeout(myTimeOut)
+    }
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() === "Out"){
+        var staff2OutTime = duration2 * 60000
+        myTimeOut2 = setTimeout(alertFunc2, staff2OutTime)  
+        setTimeout(($("#tableBody > tr:nth-child(2) > td:nth-child(5)").empty().append(late)), staff2OutTime)
+    } else {
+        clearTimeout(myTimeOut2)
+    }
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() === "Out"){
+        var staff3OutTime = duration3 * 60000
+        myTimeOut3 = setTimeout(alertFunc3, (staff3OutTime) + 1000)
+        setTimeout(($("#tableBody > tr:nth-child(3) > td:nth-child(5)").empty().append(late)), staff3OutTime)
+    } else {
+        clearTimeout(myTimeOut3)
+    }
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() === "Out"){
+        var staff4OutTime = duration4 * 60000
+        myTimeOut4 = setTimeout(alertFunc4, (staff4OutTime) + 1000)
+        setTimeout(($("#tableBody > tr:nth-child(4) > td:nth-child(5)").empty().append(late)), staff4OutTime)
+    } else {
+        clearTimeout(myTimeOut4)
+    }
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() === "Out"){
+        var staff5OutTime = duration5 * 60000
+        myTimeOut5 = setTimeout(alertFunc5, (staff5OutTime) + 1000)
+        setTimeout(($("#tableBody > tr:nth-child(5) > td:nth-child(5)").empty().append(late)), staff5OutTime)
+    } else {
+        clearTimeout(myTimeOut5)
+    }
+}
+
+var late = "Late"
+function alertMessage1() {
+    $("#tableBody > tr:nth-child(1) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 1, you are late")
+    
+    
+}
+function alertMessage2() {
+    $("#tableBody > tr:nth-child(2) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 2, you are late")
+}
+function alertMessage3() {
+    $("#tableBody > tr:nth-child(3) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 3, you are late")
+    
+}
+function alertMessage4() {
+    $("#tableBody > tr:nth-child(4) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 4, you are late")
+    
+}
+function alertMessage5() {
+    $("#tableBody > tr:nth-child(5) > td:nth-child(5)").empty().append(late);
+    console.log("Staff 5, you are late")
+    
+}
+// set timeOut on the end time for each of the 5 rows, then after that set time pling a toast that the employee is late
+function staffMember1(){
+    setTimeout(alertMessage1, duration1 * 60000)
+}
+function staffMember2(){
+    setTimeout(alertMessage2, duration2 * 60000)
+}
+function staffMember3(){
+    setTimeout(alertMessage3, duration3 * 60000)
+}
+function staffMember4(){
+    setTimeout(alertMessage4, duration4 * 60000)
+}
+function staffMember5(){
+    setTimeout(alertMessage5, duration5 * 60000)
+}
+function staffMemberIsLate2() {
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() === "Out") {
+        staffMember1()
+        staffMemberIsLate2()
+    }
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() === "Out") {
+        staffMember2()
+        staffMemberIsLate2()
+    }
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() === "Out") {
+        staffMember3()
+        staffMemberIsLate2()
+    }
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() ==="Out") {
+        staffMember4()
+        staffMemberIsLate2()
+    }
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() === "Out") {
+        staffMember5()
+        staffMemberIsLate2()
+    } 
+} 
+staffMemberIsLate2()
+
+
+function staffMemberIsLate() {
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration1 * 60 * 1000))){
+        console.log("nr 1, person is late!")
+        clearTimeout(myTimeOut1)
+    }
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration2 * 60 * 1000))){
+        console.log("nr 2, person is late!")
+        clearTimeout(myTimeOut2)
+    }
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration3 * 60 * 1000))){
+        console.log("nr 3, person is late!")
+        clearTimeout(myTimeOut3)
+    }
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration4 * 60 * 1000))){
+        console.log("nr 4, person is late!")
+        clearTimeout(myTimeOut4)
+    }
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() == "Out" && new Date > new Date(currentDate.getTime() + (duration5 * 60 * 1000))){
+        console.log("nr 5, person is late!")
+        clearTimeout(myTimeOut5)
+    }
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration1 * 60 * 1000))){
+        console.log("nr 1, person is out!")
+        var myTimeOut1 = setTimeout(alert1, duration1 * 60000)
+        
+    }
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration2 * 60 * 1000))){
+        console.log("nr 2, person is out!")
+        var myTimeOut2 = setTimeout(alert2, duration2 * 60000)
+        
+    }
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration3 * 60 * 1000))){
+        console.log("nr 3, person is out!")
+        var myTimeOut3 = setTimeout(alert3, duration3 * 60000)
+        
+    }
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration4 * 60 * 1000))){
+        console.log("nr 4, person is out!")
+        var myTimeOut4 = setTimeout(alert4, duration4 * 60000)
+        
+    }
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() == "Out" && new Date() < new Date(currentDate.getTime() + (duration5 * 60 * 1000))){
+        console.log("nr 5, person is out!")
+        var myTimeOut5 = setTimeout(alert5, duration5 * 60000)
+    }
+}
+
+function staffMemberIsLate2() {
+    if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() === "Out") {
+        timeout1 = setTimeout(function(){
+            $("#tableBody > tr:nth-child(1) > td:nth-child(5)").empty().append(late);
+            console.log("Staff 1, you are late")
+               }, duration1 * 60000);
+    } else if($("#tableBody > tr:nth-child(1) > td:nth-child(5)").text() === "Late"){
+        clearTimeout(timeout1)
+    }
+    if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() === "Out") {
+        timeout2 = setTimeout(function(){
+            $("#tableBody > tr:nth-child(2) > td:nth-child(5)").empty().append(late);
+            console.log("Staff 2, you are late")
+               }, duration2 * 60000);
+    }  else if($("#tableBody > tr:nth-child(2) > td:nth-child(5)").text() === "Late"){
+        clearTimeout(timeout2)
+    }
+    if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() === "Out") {
+        timeout3 = setTimeout(function(){
+            $("#tableBody > tr:nth-child(3) > td:nth-child(5)").empty().append(late);
+            console.log("Staff 3, you are late")
+               }, duration3 * 60000);
+    } else if($("#tableBody > tr:nth-child(3) > td:nth-child(5)").text() === "Late"){
+        clearTimeout(timeout3)
+    }
+    if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() ==="Out") {
+        timeout4 = setTimeout(function(){
+            $("#tableBody > tr:nth-child(4) > td:nth-child(5)").empty().append(late);
+            console.log("Staff 4, you are late")
+               }, duration4 * 60000); 
+    } else if($("#tableBody > tr:nth-child(4) > td:nth-child(5)").text() === "Late"){
+        clearTimeout(timeout4)
+    }
+    if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() === "Out") {
+        timeout5 = setTimeout(function(){
+            $("#tableBody > tr:nth-child(5) > td:nth-child(5)").empty().append(late);
+            console.log("Staff 5, you are late")
+               }, duration5 * 60000);
+    }  else if($("#tableBody > tr:nth-child(5) > td:nth-child(5)").text() === "Late"){
+        clearTimeout(timeout5)
+    }
+} 
+let cell = "";
+let table = document.getElementById("table")
+let tr = table.rows[1]
+cell = tr.cells[4].innerText 
+ setTimeout(function(){
+ 
+   }, 3000);
+function wierd() {
+    cell.addEventListener("change", function(){
+    if(cell != ""){
+        console.log(cell)
+    } if(cell = "") {
+        console.log("no")
+        }
+ }) 
+}
+setTimeout(wierd, 4000)
+
+$()
+
+
+console.log($("#tableBody > tr:nth-child(2) > td:nth-child(3)").innerText)
