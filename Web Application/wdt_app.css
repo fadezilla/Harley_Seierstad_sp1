@@ -36,11 +36,6 @@ tbody{
 #tablePictures{
     text-align: center;
 }
-td{
-    
-}
-
-
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
     background-color: #CFF5FF;
@@ -107,7 +102,7 @@ div#buttonDiv1{
 }
 #clearButton{
     color: #fff;
-    background-color: #dc3545 ;
+    background-color: #dc3545;
     font-family: consolas;
     position: absolute;
     right: 12px;
