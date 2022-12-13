@@ -128,7 +128,7 @@ function staffUserGet(){
         nameCell.innerHTML = staffMember.name;
         surnameCell.innerHTML = staffMember.surname;
         emailCell.innerHTML = staffMember.email;
-        statusCell.innerHTML = staffMember.status;
+        statusCell.innerHTML = "In"
         outTimeCell.innerHTML = staffMember.outTime;
         durationCell.innerHTML = staffMember.duration;
         expectedReturnTimeCell.innerHTML = staffMember.expectedReturnTime;
@@ -188,7 +188,7 @@ function staffIn(){
     if(selectedRow) {
         let staffMember = staffMembers[selectedRow.rowIndex - 1];
         staffMember.expectedReturnTime = ""
-        staffMember.status = "in";
+        staffMember.status = "In";
         staffMember.outTime = "";
         staffMember.duration = "";
 
