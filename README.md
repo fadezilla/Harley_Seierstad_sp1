@@ -1,32 +1,39 @@
-# Project name
-Harley_seierstad_1p1
-# Author 
-Harley Seierstad
+# WeDeliverTECH Reception Management Dashboard
+This simple web application is designed to assist receptionists in managing staff members' out-of-office logging and tracking deliveries to customers.
 
-## Simple overview of use/purpose.
+## Features
+### Staff Management
 
-Purpose of this program is to have a system that tracks time of staff and shows the user if the specific staff member is late. it also 
-is used to keep track of delivery drivers aswell as getting a notification if the delivery is late. 
+- Clock In/Out: Receptionists can log staff members' out-of-office time and expected return time. When staff members return, their status is updated automatically.
+- Late Notification: If a staff member hasn't returned by the expected time, a toast notification appears with their information.
+- Real-time Clock: The current date and time are displayed at the bottom of the dashboard.
 
-### An in-depth paragraph about your project and overview of use.
+### Delivery Tracking
 
-The first part of the program is a table filled with five random dummy staff members ( can be changed to any number you want ), the user can then click
-on one of the table rows with the staff member within, making that table row "active" and then the user can either click "out" or "in" button. the "out" button 
-is used for when one or several staff members are out on a break, meeting or whatever reason. it will then prompt the user for how long they will be out for, and then
-it will fill in the table cells with information about if they are in or out of office, when they left, how long they think they will be and it will calculate 
-when the expected return time will be based on the duration from the prompt and it will fire off an toast if the staff member is late.
-the "in" button simply cleares these new cells aswell as changing the status from "out" to "in" aswell as stopping any toasts that would otherwise go off.
+- Add Delivery: Receptionists can input delivery driver information, including vehicle type, name, telephone number, delivery address, and return time.
+- Late Delivery Notification: If a delivery driver hasn't returned by the estimated return time, a toast notification appears with their information.
 
-next part of the program is a schedule delivery table, with input cells. in these cells the user can fill in, vehicle type, name, surname, telephone, address and return time of the driver they have talked to. by clicking the add button it will take the input from the schedule delivery table, check if its valid information and then create a new table row in the delivery board table, where you can see the information you just put in, and for each delivery driver you add, more rows will be added. this will also create a toast that will go off if the delivery driver have not returned by the expected return time.
-By first clicking a table row with the delivery driver you wanna interact with, making it "active", the clear button will delete that row aswell as stopping the toast.
+## Usage
 
-there is also a digital clock at the bottom of the page to easily have access to the time and date.
+1. ### Staff Management:
 
-### Dependencies
-bootstrap 5.2.3 or later
-jquery 3.3.1 or later
-popper 1.14.7 or later
+* Click on the "Out" button next to a staff member's name to log them out.
+* Enter the duration of their absence and expected return time.
+* Click on the "In" button when they return to update their status.
 
-### Installing
-https://getbootstrap.com/docs/5.2/getting-started/download/
-https://jquery.com/download/
+2. ### Delivery Tracking:
+
+* Fill in the delivery driver information in the input fields.
+* Click on the "Add" button to add the delivery to the table.
+* If a delivery driver hasn't returned by the estimated time, a notification will appear.
+
+## Installation
+1. Clone the repository to your local machine.
+2. Open the project folder in your preferred code editor.
+3. Ensure you have the necessary libraries and plugins installed (Bootstrap, JavaScript/jQuery).
+4. Run the web application using a local server or deploy it to your hosting platform.
+
+## External Libraries and Plugins
+- Bootstrap: Used for styling and responsive design.
+- JavaScript/jQuery: Used for client-side scripting and interactivity.
+- Randomuser API: Used to generate demo staff member information.
